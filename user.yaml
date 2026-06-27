@@ -4,6 +4,7 @@ app-info :
   version: 1.0.0
   developer:
     name: Your Name
+    password : test@123
     email: your.email@example.com
   contact:
     name: Support Team
