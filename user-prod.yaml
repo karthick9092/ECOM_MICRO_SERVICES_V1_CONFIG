@@ -1,6 +1,6 @@
 app-info :
   name: User Management API
-  description: CRUD operations for user management producttion environment
+  description: CRUD operations for user management prod environment
   version: 1.0.0
   developer:
     name: Your Name
