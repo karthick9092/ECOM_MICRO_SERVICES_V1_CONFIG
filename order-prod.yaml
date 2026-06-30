@@ -1,6 +1,6 @@
 app-info :
   name: Order Management API
-  description: CRUD operations for order management prod environment
+  description: CRUD operations for order management producction environment
   version: 1.0.0
   developer:
     name: Your Name
