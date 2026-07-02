@@ -1,6 +1,6 @@
 app-info :
   name: Product Management API
-  description: CRUD operations for product management prod environment
+  description: CRUD operations for product management producttion environment
   version: 1.0.0
   developer:
     name: Your Name
