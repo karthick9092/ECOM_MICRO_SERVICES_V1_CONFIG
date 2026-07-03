@@ -25,9 +25,9 @@ spring:
                       firstBackoff: 2s
                       maxBackoff: 10s
                       factor: 2
-          http-client:
-            connect-timeout: 3s
-            read-timeout: 5s            
+        http-client:
+          connect-timeout: 3s
+          read-timeout: 5s            
 
 app-info :
   name: User Management API
