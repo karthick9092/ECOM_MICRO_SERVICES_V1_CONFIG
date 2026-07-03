@@ -71,7 +71,7 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
-        slidingWindowSize: 20                  # Evaluates the last 20 requests
+        slidingWindowSize: 10                  # Evaluates the last 20 requests
         slidingWindowType: COUNT_BASED
         failureRateThreshold: 50               # Trips the circuit open if 50% of calls fail
         slowCallRateThreshold: 50              # Trips open if 50% of calls are slower than time limit
