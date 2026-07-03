@@ -89,9 +89,9 @@ resilience4j:
         default:
           timeoutDuration: 4s                    # Drops connection if downstream takes > 4 seconds
           cancelRunningFuture: true
-    instances:
-      userServiceCircuitBreaker:
-        baseConfig: default    
+      instances:
+        userServiceCircuitBreaker:
+          baseConfig: default    
              
 app-info :
   name: User Management API
