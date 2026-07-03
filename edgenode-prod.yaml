@@ -54,6 +54,7 @@ spring:
                     exceptions:
                       - java.io.IOException
                       - java.util.concurrent.TimeoutException
+                      - org.springframework.cloud.gateway.support.TimeoutException
                     backoff:
                       firstBackoff: 2s
                       maxBackoff: 10s
