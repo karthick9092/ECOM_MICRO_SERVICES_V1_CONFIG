@@ -1,33 +1,32 @@
 server:
   port: 8084
 
-spring:
+pring:
   cloud:
     gateway:
-      server:
-        webmvc:
-          routes:
-            - id: user-service
-              uri: lb://USER
-              predicates:
-                - Path=/users/**
-              filters:
-                - RewritePath=/users/(?<segment>.*), /api/users/${segment}
-                - name: Retry
-                  args:
-                    retries: 3
-                    methods:
-                      - GET
-                    exceptions:
-                      - java.io.IOException
-                      - java.util.concurrent.TimeoutException
-                    backoff:
-                      firstBackoff: 2s
-                      maxBackoff: 10s
-                      factor: 2
-        http-client:
-          connect-timeout: 3s
-          read-timeout: 5s            
+      httpclient:
+        connect-timeout: 3000          # milliseconds
+        response-timeout: 5s           # Duration
+
+      routes:
+        - id: user-service
+          uri: lb://USER
+          predicates:
+            - Path=/users/**
+          filters:
+            - RewritePath=/users/(?<segment>.*), /api/users/${segment}
+            - name: Retry
+              args:
+                retries: 3
+                methods:
+                  - GET
+                exceptions:
+                  - java.io.IOException
+                  - java.util.concurrent.TimeoutException
+                backoff:
+                  firstBackoff: 2s
+                  maxBackoff: 10s
+                  factor: 2         
 
 app-info :
   name: User Management API
