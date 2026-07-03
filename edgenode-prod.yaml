@@ -39,3 +39,8 @@ info:
     description: Api gateway for microservice
     version: 1.0.0
     author: Logesh
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
