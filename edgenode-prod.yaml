@@ -82,13 +82,16 @@ resilience4j:
     instances:
       userServiceCircuitBreaker:
         baseConfig: default                    # Tells this specific instance to use the rules above
-
-    # --- Time Limiter (Timeout Engine) Configuration ---
-    # timelimiter:
-    #   configs:
-    #     default:
-    #       timeoutDuration: 4s                    # Drops connection if downstream takes > 4 seconds
-    #       cancelRunningFuture: true 
+  
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 4s
+        cancelRunningFuture: true
+    # 🟢 Setting the instance name to 'default' applies it globally
+    instances:
+      default:
+        baseConfig: default
              
 app-info :
   name: User Management API
