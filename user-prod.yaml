@@ -17,3 +17,11 @@ eureka:
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8083/eureka/
+
+info:
+  app:
+    name: User Service
+    description: Handles user management
+    version: 1.0.0
+    author: Logesh
+
