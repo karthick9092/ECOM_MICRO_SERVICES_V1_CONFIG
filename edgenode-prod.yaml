@@ -32,3 +32,10 @@ eureka:
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8083/eureka/
+
+info:
+  app:
+    name: Edge node Service
+    description: Api gateway for microservice
+    version: 1.0.0
+    author: Logesh
