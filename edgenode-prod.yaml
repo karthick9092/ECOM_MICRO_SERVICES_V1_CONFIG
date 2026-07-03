@@ -13,6 +13,18 @@ spring:
                 - Path=/users/**
               filters:
                 - RewritePath=/users/(?<segment>.*), /api/users/${segment}
+              retry:
+                enabled: true
+                max-attempts: 3
+                methods: GET 
+                exceptions:
+                  - badrequestexception
+                  - java.io.IOException
+                  - java.util.concurrent.TimeoutException
+                backoff:
+                  first-backoff: 2s
+                  max-backoff: 10s
+                  factor: 2.0
 
 app-info :
   name: User Management API
