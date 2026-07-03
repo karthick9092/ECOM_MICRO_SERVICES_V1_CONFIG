@@ -23,12 +23,12 @@ management:
     web:
       exposure:
         include: "*"
-    endpoint:
-      info:
-        enabled: true
+  endpoint:
     info:
-      env:
-        enabled: true        
+      enabled: true
+  info:
+    env:
+      enabled: true     
 
 info:
   app:
