@@ -13,7 +13,7 @@ eureka:
   instance:
     hostname: localhost
   client:
-    fetch-registry: true
+    fetch-registry: false
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8083/eureka/
