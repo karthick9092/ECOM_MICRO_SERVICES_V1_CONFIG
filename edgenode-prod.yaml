@@ -4,6 +4,9 @@ server:
 spring:
   cloud:
     gateway:
+      server:
+        webmvc:
+          enabled: true
       mvc:
         routes:
           - id: user-service
