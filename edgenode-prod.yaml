@@ -64,7 +64,7 @@ spring:
                   args:
                     name: userServiceCircuitBreaker
                     # If user-service fails, forward internally to a fallback endpoint
-                    fallbackUri: forward:/fallback/user-service
+                    fallbackUri: forward:/fallback/appinfo
 
 # --- Resilience4j Fine-Tuned Configuration Properties ---
 resilience4j:
