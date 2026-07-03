@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: user-service
+            uri: lb://USER
+            predicates:
+              - Path=/user/**
+            filters:
+              - RewritePath=/user/(?<segment>.*), /api/user/${segment}
