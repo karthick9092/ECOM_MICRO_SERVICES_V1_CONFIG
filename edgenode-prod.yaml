@@ -8,11 +8,14 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-        - id: user-service
-          uri: lb://user
-          predicates:
-            - Path=/users/**
+      # NOTICE THE NEW PREFIX LAYER HERE FOR 5.0.x
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: lb://user
+              predicates:
+                - Path=/users/**
              
 app-info :
   name: User Management API
