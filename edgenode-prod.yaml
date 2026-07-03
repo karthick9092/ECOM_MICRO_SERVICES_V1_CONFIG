@@ -59,6 +59,36 @@ spring:
                       firstBackoff: 2s
                       maxBackoff: 10s
                       factor: 2
+                # --- Resilience4j Circuit Breaker Filter ---
+                - name: CircuitBreaker
+                  args:
+                    name: userServiceCircuitBreaker
+                    # If user-service fails, forward internally to a fallback endpoint
+                    fallbackUri: forward:/fallback/user-service
+
+# --- Resilience4j Fine-Tuned Configuration Properties ---
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 20                  # Evaluates the last 20 requests
+        slidingWindowType: COUNT_BASED
+        failureRateThreshold: 50               # Trips the circuit open if 50% of calls fail
+        slowCallRateThreshold: 50              # Trips open if 50% of calls are slower than time limit
+        slowCallDurationThreshold: 3s          # What counts as a "slow call"
+        waitDurationInOpenState: 15s           # Stays open for 15s before trying again (Half-Open)
+        permittedNumberOfCallsInHalfOpenState: 5 # Allows 5 test requests in Half-Open state
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+    instances:
+      userServiceCircuitBreaker:
+        baseConfig: default                    # Tells this specific instance to use the rules above
+
+  # --- Time Limiter (Timeout Engine) Configuration ---
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 4s                    # Drops connection if downstream takes > 4 seconds
+        cancelRunningFuture: true
              
 app-info :
   name: User Management API
