@@ -6,6 +6,8 @@ management:
   endpoint:
     info:
       enabled: true
+    gateway:
+      enabled: true
   info:
     env:
-      enabled: true  
+      enabled: true
