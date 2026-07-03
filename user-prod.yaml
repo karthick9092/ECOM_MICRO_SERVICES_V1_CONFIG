@@ -8,3 +8,12 @@ app-info :
   contact:
     name: Support Team
     email: support@test.com
+
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
