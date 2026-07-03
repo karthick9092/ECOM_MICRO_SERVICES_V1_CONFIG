@@ -44,6 +44,6 @@ info:
 logging:
   level:
     # Mutes the RestClient HTTP request/response payloads for Eureka fetches
-    org.springframework.web.client.DefaultRestClient: INFO
+    org.springframework.web.client.DefaultRestClient: DEBUG
     # Mutes the routing metric updates every 30 seconds
-    org.springframework.cloud.gateway.filter.GatewayMetricsFilter: INFO
+    org.springframework.cloud.gateway.filter.GatewayMetricsFilter: DEBUG
