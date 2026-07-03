@@ -1,0 +1,18 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    info:
+      enabled: true
+  info:
+    env:
+      enabled: true     
+
+info:
+  app:
+    name: User Service
+    description: Handles user management
+    version: 1.0.0
+    author: Logesh
