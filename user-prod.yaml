@@ -37,3 +37,7 @@ info:
     version: 1.0.0
     author: Logesh
 
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} traceId=%X{trace_id} spanId=%X{span_id} - %msg%n"
+
